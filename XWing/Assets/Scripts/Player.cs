@@ -8,14 +8,36 @@ public class Player : MonoBehaviour {
 
 
 
+    [PunRPC]
+    public void SetPlayerID (int id){
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        playerID = id;
+
+    }
+
+    public int GetPlayerID() {
+
+        return playerID;
+
+    }
+
+
+    //used by photon view to stream data between watched objects
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
+        if (stream.isWriting)
+        {
+
+         
+        }
+
+        else {
+
+          
+
+        }
+
+    }
+    
 }
